@@ -1,25 +1,11 @@
 <h1>Manufacturers</h1>
 
-<%= form_for Manufacturer.new do |f| %>
-
-
-  <div>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div>
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-
-  <div><%= f.submit "Add New Car", class: "button active" %></div>
-<% end %>
+<%= link_to "Add a new manufacturer", new_manufacturer_path %>
 
 <ol>
   <h3> List of manufacturers in the lot </h3>
   <% @manufacturers.each do |manufacturer| %>
     <li><%= manufacturer.name %> - <%= manufacturer.country %></li>
   <% end %>
-</ul>
+</ol>
 

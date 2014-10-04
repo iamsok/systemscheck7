@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :manufacturer do
-    name "Hyundai"
+    sequence :name do |n|
+     "Hyundai#{n}"
+    end
     country "Korea"
   end
 end
