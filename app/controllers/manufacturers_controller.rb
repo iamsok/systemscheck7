@@ -1,7 +1,6 @@
 class ManufacturersController < ApplicationController
   def index
     @manufacturers = Manufacturer.all
-
   end
 
   def show
@@ -15,9 +14,11 @@ class ManufacturersController < ApplicationController
   def create
     @manufacturer = Manufacturer.new(manufacturer_params)
       if @manufacturer.save
+        flash[:notice] = 'Car was successfully added'
         redirect_to manufacturer_path(@manufacturer)
       else
-        render :new
+        flash[:alert] = 'Not successful'
+        render :index
       end
   end
 
