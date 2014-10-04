@@ -20,5 +20,12 @@ feature 'Car salesman adds a car' do
     click_on "Add New Manufacturer"
     expect(page).to have_content("This manufacturer already exists in our database")
   end
+
+  scenario 'Salesman tries to create a blank field' do
+    manufacturer = FactoryGirl.create(:manufacturer)
+    visit new_manufacturer_path
+    click_on "Add New Manufacturer"
+    expect(page).to have_content("Please fill in required information")
+  end
 end
 
