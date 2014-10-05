@@ -1,5 +1,18 @@
-<p><%= @manufacturer.name %></p>
-<p><%= @manufacturer.country %></p>
+<h2><%= @manufacturer.name %></h2>
+<ol>
+  <h3> List of Cars</h3>
+  <% @cars.each do |car| %>
+    <% if @manufacturer.id == car.manufacturer_id %>
+    <li>
+      <p><%= car.name %></p>
+      <p><%= car.year %></p>
+      <p><%= car.mileage %></p>
+      <p><%= car.color %></p>
+      <p><%= car.description %></p>
+    </li>
+    <% end %>
+  <% end %>
+</ol>
 
 
 <%= link_to 'Back', manufacturers_path %>

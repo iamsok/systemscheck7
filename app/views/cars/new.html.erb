@@ -2,16 +2,20 @@
 
   <%= form_for Car.new do |f| %>
   <% if @car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being submitted:</h2>
-
-      <ul>
-      <% @car.errors.full_messages.each do |msg| %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@manufacturer.errors.count, "error") %> prohibited this manufacturer from being submitted:</h2>
+    <ul>
+      <% @manufacturer.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+
+  <div>
+    <%= f.label :manufacturer_id %>
+    <%= f.collection_select :manufacturer_id, Manufacturer.all.order(:name), :id, :name, include_blank: true %>
+  </div>
 
   <div>
     <%= f.label :name %><br />
