@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Car salesman adds a car' do
+feature 'Car salesman adds a manufacturer' do
 
   scenario  'salesman requires specific car manufacturers name and country' do
     manufacturer = FactoryGirl.build(:manufacturer)
