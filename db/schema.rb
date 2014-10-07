@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20141005181005) do
   end
 
   create_table "manufacturers", force: true do |t|
-    t.string "name",    null: false
-    t.string "country", null: false
+    t.string   "name",       null: false
+    t.string   "country",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

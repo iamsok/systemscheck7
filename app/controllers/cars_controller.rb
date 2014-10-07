@@ -13,15 +13,14 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-      if @car.save
-        flash[:notice] = 'Car was successfully added!'
-        redirect_to manufacturers_path
-      else
-        flash[:notice] = 'Please fill in required information'
-        render :new
-      end
+    if @car.save
+      flash[:notice] = 'Car was successfully added!'
+      redirect_to manufacturers_path
+    else
+      flash[:notice] = 'Please fill in required information'
+      render :new
+    end
   end
-
 
   private
   def car_params
