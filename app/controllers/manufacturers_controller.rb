@@ -14,13 +14,13 @@ class ManufacturersController < ApplicationController
 
   def create
     @manufacturer = Manufacturer.new(manufacturer_params)
-      if @manufacturer.save
-        flash[:notice] = 'Car was successfully added!'
-        redirect_to manufacturers_path
-      else
-        flash[:notice] = 'Please fill in required information'
-        render :new
-      end
+    if @manufacturer.save
+      flash[:notice] = 'Car was successfully added!'
+      redirect_to manufacturers_path
+    else
+      flash[:notice] = 'Please fill in required information'
+      render :new
+    end
   end
 
   private
